@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+.configurator-area {
+    * {
+        font-family: "Ubuntu", sans-serif;
+    }
+}
+.left {
+    width: 295px;
+    @media (width<992px) {
+        display: none;
+    }
+}
+
+@media (hover: hover) {
+    .configurator-area {
+        .menu-item {
+            transition: all 0.2s;
+            &:hover {
+                background-color: rgb(0, 156, 235);
+            }
+        }
+    }
+}
+
+.centerRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.configurator-area {
+    * {
+        // font-family: inherit;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+    }
+    container-type: inline-size;
+    width: 100%;
+    .menu-section {
+        width: 100%;
+        display: flex;
+        margin-bottom: 2cqi;
+        height: 5cqi;
+        .menu-item {
+            background-color: #0088cc;
+            height: 100%;
+            flex-grow: 1;
+            cursor: pointer;
+            &:not(:last-child) {
+                border-right: 1px solid #376195;
+            }
+            p {
+                font-size: clamp(11px, 1.7cqi, 15px);
+                font-weight: 700;
+                color: white;
+            }
+            &.active {
+                background-color: #edededa5;
+                p {
+                    color: black;
+                }
+            }
+        }
+    }
+    .selection-wrapper {
+        width: 100%;
+        position: absolute;
+        z-index: 10000;
+        height: max-content;
+        min-height: 200px;
+
+        .selection {
+            align-self: stretch;
+            flex-grow: 1;
+            background-color: #edededa5;
+            padding: 2cqi 3cqi;
+            display: none;
+            .mode-wrapper {
+                display: flex;
+            }
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .image-section {
+        img {
+            width: 100%;
+            position: absolute;
+        }
+        .image-original {
+            z-index: 0;
+        }
+        .layer-facade {
+            z-index: 50;
+        }
+    }
+}

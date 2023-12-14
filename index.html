@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <link href="configuratorStyle.css" rel="stylesheet">
+    <div style="width: 1350px; margin: auto; height: 365px;">
+        <img src="screen-top.png" alt="originalImage">
+    </div>
+    <div style="display: flex; max-width: 1350px; margin: auto;">
+        <div class="left">
+            <img src="screen-left.png" alt="originalImage">
+        </div>
+        <section class="configurator-area" id="configurator-area">
+            <section class="menu-section">
+                <div class="menu-item centerRow" data-name="menu-item1">
+                    <p>Фасад</p>
+                </div>
+                <div class="menu-item centerRow" data-name="menu-item2">
+                    <p>Цоколь</p>
+                </div>
+                <div class="menu-item centerRow" data-name="menu-item3">
+                    <p>Обрамления</p>
+                </div>
+                <div class="menu-item centerRow" data-name="menu-item4">
+                    <p>Углы</p>
+                </div>
+                <div class="menu-item centerRow" data-name="menu-item5">
+                    <p>Вставки</p>
+                </div>
+                <div class="menu-item centerRow" data-name="menu-item6">
+                    <p>Цвет окон</p>
+                </div>
+            </section>
+            <div class="selection-wrapper centerRow">
+                <section class="selection" name="menu-item1">
+                    <div class="mode-wrapper">
+                        <button value="res/facade/65/2.png"
+                            style="width: 50px; height: 50px; background-color: blue; margin-right: 10px;"
+                            data-name="buttonTest1"></button>
+                        <button value="res/facade/65/3.png"
+                            style="width: 50px; height: 50px; background-color: red; margin-right: 10px;"
+                            data-name="buttonTest1"></button>
+                    </div>
+                </section>
+                <section class="selection" name="menu-item2">
+                    <div class="mode-wrapper">
+                        <button style="width: 50px; height: 50px; background-color: green; margin-right: 10px;"
+                            id="buttonTest21"></button>
+                        <button style="width: 50px; height: 50px; background-color: black; margin-right: 10px;"
+                            id="buttonTest21"></button>
+                    </div>
+                </section>
+            </div>
+            <section class="image-section">
+                <img class="image-original" src="res/original.jpg" alt="originalImage">
+                <img class="layer-facade" src="res/facade/65/1.png" alt="facade">
+            </section>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="configuratorJS.js" type="text/javascript" defer></script>
+</body>
+
+</html>

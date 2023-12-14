@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+.configurator-area * {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.left {
+  width: 295px;
+}
+@media (width < 992px) {
+  .left {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .configurator-area .menu-item {
+    transition: all 0.2s;
+  }
+  .configurator-area .menu-item:hover {
+    background-color: rgb(0, 156, 235);
+  }
+}
+.centerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.configurator-area {
+  container-type: inline-size;
+  width: 100%;
+}
+.configurator-area * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.configurator-area .menu-section {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2cqi;
+  height: 5cqi;
+}
+.configurator-area .menu-section .menu-item {
+  background-color: #0088cc;
+  height: 100%;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.configurator-area .menu-section .menu-item:not(:last-child) {
+  border-right: 1px solid #376195;
+}
+.configurator-area .menu-section .menu-item p {
+  font-size: clamp(11px, 1.7cqi, 15px);
+  font-weight: 700;
+  color: white;
+}
+.configurator-area .menu-section .menu-item.active {
+  background-color: rgba(237, 237, 237, 0.6470588235);
+}
+.configurator-area .menu-section .menu-item.active p {
+  color: black;
+}
+.configurator-area .selection-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+  height: max-content;
+  min-height: 200px;
+}
+.configurator-area .selection-wrapper .selection {
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: rgba(237, 237, 237, 0.6470588235);
+  padding: 2cqi 3cqi;
+  display: none;
+}
+.configurator-area .selection-wrapper .selection .mode-wrapper {
+  display: flex;
+}
+.configurator-area .selection-wrapper .selection.active {
+  display: block;
+}
+.configurator-area .image-section img {
+  width: 100%;
+  position: absolute;
+}
+.configurator-area .image-section .image-original {
+  z-index: 0;
+}
+.configurator-area .image-section .layer-facade {
+  z-index: 50;
+}/*# sourceMappingURL=configuratorStyle.css.map */
