@@ -59,20 +59,29 @@
   align-self: stretch;
   flex-grow: 1;
   background-color: rgba(237, 237, 237, 0.737254902);
-  padding: 2cqi 3cqi;
+  padding: 2cqi 2cqi;
   display: none;
+  overflow: auto;
 }
-.configurator-area .selection-wrapper .selection .mode {
+.configurator-area .selection-wrapper .selection .mode,
+.configurator-area .selection-wrapper .selection .material {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 2cqi;
+  row-gap: 1cqi;
+  margin-bottom: 1cqi;
 }
-.configurator-area .selection-wrapper .selection .mode h4 {
-  padding: 0.7cqi 1cqi;
+.configurator-area .selection-wrapper .selection .mode > h4,
+.configurator-area .selection-wrapper .selection .material > h4 {
   font-size: clamp(10px, 1.5cqi, 15px);
   font-weight: 500;
+  width: 100%;
 }
-.configurator-area .selection-wrapper .selection .mode .button-mode {
+.configurator-area .selection-wrapper .selection .mode .button-mode,
+.configurator-area .selection-wrapper .selection .mode .button-material,
+.configurator-area .selection-wrapper .selection .material .button-mode,
+.configurator-area .selection-wrapper .selection .material .button-material {
   background-color: #0088cc;
   color: white;
   padding: 1cqi 1.5cqi;
@@ -81,14 +90,78 @@
   border: 2px solid transparent;
 }
 @media (hover: hover) {
-  .configurator-area .selection-wrapper .selection .mode .button-mode:hover {
+  .configurator-area .selection-wrapper .selection .mode .button-mode:hover,
+  .configurator-area .selection-wrapper .selection .mode .button-material:hover,
+  .configurator-area .selection-wrapper .selection .material .button-mode:hover,
+  .configurator-area .selection-wrapper .selection .material .button-material:hover {
     background-color: rgb(0, 156, 235);
   }
 }
-.configurator-area .selection-wrapper .selection .mode .button-mode.active {
+.configurator-area .selection-wrapper .selection .mode .button-mode.active,
+.configurator-area .selection-wrapper .selection .mode .button-material.active,
+.configurator-area .selection-wrapper .selection .material .button-mode.active,
+.configurator-area .selection-wrapper .selection .material .button-material.active {
   background-color: rgba(237, 237, 237, 0.737254902);
   color: black;
   border: 2px solid #0088cc;
+}
+.configurator-area .selection-wrapper .selection .color {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2cqi;
+  row-gap: 1cqi;
+  margin-bottom: 1cqi;
+}
+.configurator-area .selection-wrapper .selection .color h4 {
+  font-size: clamp(10px, 1.5cqi, 15px);
+  font-weight: 500;
+  width: 100%;
+}
+.configurator-area .selection-wrapper .selection .color .background {
+  width: 100%;
+  padding: 2cqi;
+  border-radius: 4px;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.619);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 2cqi;
+  row-gap: 3cqi;
+}
+.configurator-area .selection-wrapper .selection .color .color-item {
+  background-color: white;
+  width: clamp(120px, 15cqi, 300px);
+  height: clamp(70px, 10cqi, 300px);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.configurator-area .selection-wrapper .selection .color .color-item .text-wrapper {
+  background-image: linear-gradient(to top, rgb(255, 255, 255) 20%, transparent 100%);
+  padding: 1.5cqi 0.5cqi 0.3cqi 0.5cqi;
+  color: black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.configurator-area .selection-wrapper .selection .color .color-item .text-wrapper p {
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(9px, 1.5cqi, 14px);
+}
+@media (hover: hover) {
+  .configurator-area .selection-wrapper .selection .color .color-item:hover {
+    transform: scale(1.1);
+  }
+  .configurator-area .selection-wrapper .selection .color .color-item:hover .text-wrapper {
+    padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
+  }
+}
+.configurator-area .selection-wrapper .selection .color.active {
+  display: flex;
 }
 .configurator-area .selection-wrapper .selection.active {
   display: block;

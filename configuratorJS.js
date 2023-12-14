@@ -3,12 +3,15 @@ $(function () {
     let area = $(".configurator-area");
     let menuItems = $(".menu-item");
     let selections = $(".selection");
-    let buttonModes = $(".button-mode");
+    let buttonModeArr = $(".button-mode");
+    let buttonMaterialArr = $(".button-material");
+    let colorArr = $(".color");
 
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
-            $("#configurator-area").find(".active").removeClass("active");
+            selections.removeClass("active");
+            menuItems.removeClass("active");
         }
     });
 
@@ -26,8 +29,23 @@ $(function () {
     });
 
     $(".button-mode").on("click", function () {
-        buttonModes.removeClass("active");
+        buttonModeArr.removeClass("active");
         $(this).addClass("active");
+    });
+
+    $(".button-material").on("click", function () {
+        buttonMaterialArr.removeClass("active");
+        colorArr.removeClass("active");
+        $(this).addClass("active");
+        area.find(`[name=facade-palette-${$(this).data("value")}]`).addClass(
+            "active"
+        );
+    });
+
+    $(".color-item").on("click", function () {
+        $(".layer-facade").prop("src", `${$(this).data("value")}`);
+        selections.removeClass("active");
+        menuItems.removeClass("active");
     });
 
     // changes

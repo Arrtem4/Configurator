@@ -68,18 +68,24 @@ $menu-background: #0088cc;
             align-self: stretch;
             flex-grow: 1;
             background-color: $background-menu-active;
-            padding: 2cqi 3cqi;
+            padding: 2cqi 2cqi;
             display: none;
-            .mode {
+            overflow: auto;
+            .mode,
+            .material {
                 display: flex;
+                flex-wrap: wrap;
                 align-items: center;
                 column-gap: 2cqi;
-                h4 {
-                    padding: 0.7cqi 1cqi;
+                row-gap: 1cqi;
+                margin-bottom: 1cqi;
+                > h4 {
                     font-size: clamp(10px, 1.5cqi, 15px);
                     font-weight: 500;
+                    width: 100%;
                 }
-                .button-mode {
+                .button-mode,
+                .button-material {
                     background-color: $menu-background;
                     color: white;
                     padding: 1cqi 1.5cqi;
@@ -94,6 +100,66 @@ $menu-background: #0088cc;
                         color: black;
                         border: 2px solid $menu-background;
                     }
+                }
+            }
+            .color {
+                display: none;
+                flex-wrap: wrap;
+                align-items: center;
+                column-gap: 2cqi;
+                row-gap: 1cqi;
+                margin-bottom: 1cqi;
+                h4 {
+                    font-size: clamp(10px, 1.5cqi, 15px);
+                    font-weight: 500;
+                    width: 100%;
+                }
+                .background {
+                    width: 100%;
+                    padding: 2cqi;
+                    border-radius: 4px;
+                    height: fit-content;
+                    background-color: rgba(0, 0, 0, 0.619);
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    column-gap: 2cqi;
+                    row-gap: 3cqi;
+                }
+                .color-item {
+                    background-color: white;
+                    width: clamp(120px, 15cqi, 300px);
+                    height: clamp(70px, 10cqi, 300px);
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    cursor: pointer;
+                    .text-wrapper {
+                        background-image: linear-gradient(
+                            to top,
+                            rgb(255, 255, 255) 20%,
+                            transparent 100%
+                        );
+                        padding: 1.5cqi 0.5cqi 0.3cqi 0.5cqi;
+                        color: black;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        p {
+                            text-align: center;
+                            font-weight: 500;
+                            font-size: clamp(9px, 1.5cqi, 14px);
+                        }
+                    }
+                    @include hover {
+                        transform: scale(1.1);
+                        .text-wrapper {
+                            padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
+                        }
+                    }
+                }
+                &.active {
+                    display: flex;
                 }
             }
             &.active {
