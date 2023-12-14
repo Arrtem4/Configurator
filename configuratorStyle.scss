@@ -8,7 +8,7 @@
     }
 }
 
-$background-menu-active: #edededbc;
+$background-menu-active: #026596;
 $change-hover-background: rgb(0, 156, 235);
 $menu-background: #0088cc;
 
@@ -30,15 +30,17 @@ $menu-background: #0088cc;
     container-type: inline-size;
     width: 100%;
     font-weight: 500;
+    color: white;
     .menu-section {
         width: 100%;
         display: flex;
         margin-bottom: 2cqi;
-        height: 5cqi;
+        flex-wrap: wrap;
         .menu-item {
             background-color: $menu-background;
-            height: 100%;
+            padding: 2cqi 1cqi;
             flex-grow: 1;
+            min-width: max-content;
             cursor: pointer;
             @include hover {
                 background-color: $change-hover-background;
@@ -46,15 +48,27 @@ $menu-background: #0088cc;
             &:not(:last-child) {
                 border-right: 1px solid #376195;
             }
+            .arrow {
+                transition: all 0s;
+                transform: rotate(90deg);
+                position: relative;
+                top: 1px;
+                font-weight: 400;
+                font-size: clamp(20px, 2.5cqi, 25px);
+            }
             p {
                 font-size: clamp(11px, 1.7cqi, 15px);
                 font-weight: 700;
-                color: white;
+                margin-right: clamp(6px, 1.5cqi, 1.5cqi);
             }
             &.active {
                 background-color: $background-menu-active;
-                p {
-                    color: black;
+                .arrow {
+                    transition: all 0s;
+                    transform: rotate(-90deg);
+                    position: relative;
+                    top: 1px;
+                    left: -3px;
                 }
             }
         }
@@ -67,7 +81,7 @@ $menu-background: #0088cc;
         .selection {
             align-self: stretch;
             flex-grow: 1;
-            background-color: $background-menu-active;
+            background-color: #ededed85;
             padding: 2cqi 2cqi;
             display: none;
             overflow: auto;
@@ -80,9 +94,10 @@ $menu-background: #0088cc;
                 row-gap: 1cqi;
                 margin-bottom: 1cqi;
                 > h4 {
-                    font-size: clamp(10px, 1.5cqi, 15px);
-                    font-weight: 500;
+                    font-size: clamp(10px, 1.7cqi, 20px);
+                    font-weight: 700;
                     width: 100%;
+                    color: black;
                 }
                 .button-mode,
                 .button-material {
@@ -91,14 +106,11 @@ $menu-background: #0088cc;
                     padding: 1cqi 1.5cqi;
                     font-size: clamp(10px, 1.5cqi, 15px);
                     border-radius: 4px;
-                    border: 2px solid transparent;
                     @include hover {
                         background-color: $change-hover-background;
                     }
                     &.active {
                         background-color: $background-menu-active;
-                        color: black;
-                        border: 2px solid $menu-background;
                     }
                 }
             }
@@ -110,16 +122,16 @@ $menu-background: #0088cc;
                 row-gap: 1cqi;
                 margin-bottom: 1cqi;
                 h4 {
-                    font-size: clamp(10px, 1.5cqi, 15px);
-                    font-weight: 500;
+                    font-size: clamp(10px, 1.7cqi, 20px);
+                    font-weight: 700;
                     width: 100%;
+                    color: black;
                 }
                 .background {
                     width: 100%;
-                    padding: 2cqi;
+                    padding: 2cqi 0;
                     border-radius: 4px;
                     height: fit-content;
-                    background-color: rgba(0, 0, 0, 0.619);
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
@@ -130,6 +142,7 @@ $menu-background: #0088cc;
                     background-color: white;
                     width: clamp(120px, 15cqi, 300px);
                     height: clamp(70px, 10cqi, 300px);
+                    box-shadow: (0 0 20px rgba(45, 43, 43, 0.581));
                     border-radius: 5px;
                     display: flex;
                     flex-direction: column;
@@ -138,10 +151,10 @@ $menu-background: #0088cc;
                     .text-wrapper {
                         background-image: linear-gradient(
                             to top,
-                            rgb(255, 255, 255) 20%,
+                            rgba(255, 255, 255, 0.638) 0%,
                             transparent 100%
                         );
-                        padding: 1.5cqi 0.5cqi 0.3cqi 0.5cqi;
+                        padding: 2cqi 0.5cqi 0.3cqi 0.5cqi;
                         color: black;
                         border-bottom-left-radius: 5px;
                         border-bottom-right-radius: 5px;
@@ -177,6 +190,12 @@ $menu-background: #0088cc;
         }
         .layer-facade {
             z-index: 50;
+        }
+        .layer-plinth {
+            z-index: 100;
+        }
+        .layer-angles {
+            z-index: 150;
         }
     }
 }

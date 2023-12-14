@@ -42,8 +42,20 @@ $(function () {
         );
     });
 
-    $(".color-item").on("click", function () {
+    $(".color-item-facade").on("click", function () {
         $(".layer-facade").prop("src", `${$(this).data("value")}`);
+        selections.removeClass("active");
+        menuItems.removeClass("active");
+    });
+
+    $(".color-item-plinth").on("click", function () {
+        $(".layer-plinth").prop("src", `${$(this).data("value")}`);
+        selections.removeClass("active");
+        menuItems.removeClass("active");
+    });
+
+    $(".color-item-angles").on("click", function () {
+        $(".layer-angles").prop("src", `${$(this).data("value")}`);
         selections.removeClass("active");
         menuItems.removeClass("active");
     });

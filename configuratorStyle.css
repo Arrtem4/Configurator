@@ -9,6 +9,7 @@
   container-type: inline-size;
   width: 100%;
   font-weight: 500;
+  color: white;
 }
 .configurator-area * {
   font-family: "Ubuntu", sans-serif;
@@ -22,12 +23,13 @@
   width: 100%;
   display: flex;
   margin-bottom: 2cqi;
-  height: 5cqi;
+  flex-wrap: wrap;
 }
 .configurator-area .menu-section .menu-item {
   background-color: #0088cc;
-  height: 100%;
+  padding: 2cqi 1cqi;
   flex-grow: 1;
+  min-width: max-content;
   cursor: pointer;
 }
 @media (hover: hover) {
@@ -38,16 +40,28 @@
 .configurator-area .menu-section .menu-item:not(:last-child) {
   border-right: 1px solid #376195;
 }
+.configurator-area .menu-section .menu-item .arrow {
+  transition: all 0s;
+  transform: rotate(90deg);
+  position: relative;
+  top: 1px;
+  font-weight: 400;
+  font-size: clamp(20px, 2.5cqi, 25px);
+}
 .configurator-area .menu-section .menu-item p {
   font-size: clamp(11px, 1.7cqi, 15px);
   font-weight: 700;
-  color: white;
+  margin-right: clamp(6px, 1.5cqi, 1.5cqi);
 }
 .configurator-area .menu-section .menu-item.active {
-  background-color: rgba(237, 237, 237, 0.737254902);
+  background-color: #026596;
 }
-.configurator-area .menu-section .menu-item.active p {
-  color: black;
+.configurator-area .menu-section .menu-item.active .arrow {
+  transition: all 0s;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 1px;
+  left: -3px;
 }
 .configurator-area .selection-wrapper {
   width: 100%;
@@ -58,7 +72,7 @@
 .configurator-area .selection-wrapper .selection {
   align-self: stretch;
   flex-grow: 1;
-  background-color: rgba(237, 237, 237, 0.737254902);
+  background-color: rgba(237, 237, 237, 0.5215686275);
   padding: 2cqi 2cqi;
   display: none;
   overflow: auto;
@@ -74,9 +88,10 @@
 }
 .configurator-area .selection-wrapper .selection .mode > h4,
 .configurator-area .selection-wrapper .selection .material > h4 {
-  font-size: clamp(10px, 1.5cqi, 15px);
-  font-weight: 500;
+  font-size: clamp(10px, 1.7cqi, 20px);
+  font-weight: 700;
   width: 100%;
+  color: black;
 }
 .configurator-area .selection-wrapper .selection .mode .button-mode,
 .configurator-area .selection-wrapper .selection .mode .button-material,
@@ -87,7 +102,6 @@
   padding: 1cqi 1.5cqi;
   font-size: clamp(10px, 1.5cqi, 15px);
   border-radius: 4px;
-  border: 2px solid transparent;
 }
 @media (hover: hover) {
   .configurator-area .selection-wrapper .selection .mode .button-mode:hover,
@@ -101,9 +115,7 @@
 .configurator-area .selection-wrapper .selection .mode .button-material.active,
 .configurator-area .selection-wrapper .selection .material .button-mode.active,
 .configurator-area .selection-wrapper .selection .material .button-material.active {
-  background-color: rgba(237, 237, 237, 0.737254902);
-  color: black;
-  border: 2px solid #0088cc;
+  background-color: #026596;
 }
 .configurator-area .selection-wrapper .selection .color {
   display: none;
@@ -114,16 +126,16 @@
   margin-bottom: 1cqi;
 }
 .configurator-area .selection-wrapper .selection .color h4 {
-  font-size: clamp(10px, 1.5cqi, 15px);
-  font-weight: 500;
+  font-size: clamp(10px, 1.7cqi, 20px);
+  font-weight: 700;
   width: 100%;
+  color: black;
 }
 .configurator-area .selection-wrapper .selection .color .background {
   width: 100%;
-  padding: 2cqi;
+  padding: 2cqi 0;
   border-radius: 4px;
   height: fit-content;
-  background-color: rgba(0, 0, 0, 0.619);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -134,6 +146,7 @@
   background-color: white;
   width: clamp(120px, 15cqi, 300px);
   height: clamp(70px, 10cqi, 300px);
+  box-shadow: 0 0 20px rgba(45, 43, 43, 0.581);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -141,8 +154,8 @@
   cursor: pointer;
 }
 .configurator-area .selection-wrapper .selection .color .color-item .text-wrapper {
-  background-image: linear-gradient(to top, rgb(255, 255, 255) 20%, transparent 100%);
-  padding: 1.5cqi 0.5cqi 0.3cqi 0.5cqi;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.638) 0%, transparent 100%);
+  padding: 2cqi 0.5cqi 0.3cqi 0.5cqi;
   color: black;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -175,6 +188,12 @@
 }
 .configurator-area .image-section .layer-facade {
   z-index: 50;
+}
+.configurator-area .image-section .layer-plinth {
+  z-index: 100;
+}
+.configurator-area .image-section .layer-angles {
+  z-index: 150;
 }
 
 .left {
