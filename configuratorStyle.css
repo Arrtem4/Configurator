@@ -6,13 +6,13 @@
 }
 
 .configurator-area {
+  font-family: "Ubuntu", sans-serif;
   container-type: inline-size;
   width: 100%;
   font-weight: 500;
   color: white;
 }
 .configurator-area * {
-  font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,7 +27,7 @@
 }
 .configurator-area .menu-section .menu-item {
   background-color: #0088cc;
-  padding: 2cqi 1cqi;
+  padding: 1.5cqi 1cqi;
   flex-grow: 1;
   min-width: max-content;
   cursor: pointer;
