@@ -1,26 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-.configurator-area {
-    * {
-        font-family: "Ubuntu", sans-serif;
-    }
-}
-.left {
-    width: 295px;
-    @media (width<992px) {
-        display: none;
-    }
-}
 
-@media (hover: hover) {
-    .configurator-area {
-        .menu-item {
-            transition: all 0.2s;
-            &:hover {
-                background-color: rgb(0, 156, 235);
-            }
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
         }
     }
 }
+
+$background-menu-active: #edededbc;
+$change-hover-background: rgb(0, 156, 235);
+$menu-background: #0088cc;
 
 .centerRow {
     display: flex;
@@ -30,24 +20,29 @@
 
 .configurator-area {
     * {
-        // font-family: inherit;
+        font-family: "Ubuntu", sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         user-select: none;
+        transition: all 0.2s;
     }
     container-type: inline-size;
     width: 100%;
+    font-weight: 500;
     .menu-section {
         width: 100%;
         display: flex;
         margin-bottom: 2cqi;
         height: 5cqi;
         .menu-item {
-            background-color: #0088cc;
+            background-color: $menu-background;
             height: 100%;
             flex-grow: 1;
             cursor: pointer;
+            @include hover {
+                background-color: $change-hover-background;
+            }
             &:not(:last-child) {
                 border-right: 1px solid #376195;
             }
@@ -57,7 +52,7 @@
                 color: white;
             }
             &.active {
-                background-color: #edededa5;
+                background-color: $background-menu-active;
                 p {
                     color: black;
                 }
@@ -68,24 +63,44 @@
         width: 100%;
         position: absolute;
         z-index: 10000;
-        height: max-content;
-        min-height: 200px;
-
+        height: 56.3cqi;
         .selection {
             align-self: stretch;
             flex-grow: 1;
-            background-color: #edededa5;
+            background-color: $background-menu-active;
             padding: 2cqi 3cqi;
             display: none;
-            .mode-wrapper {
+            .mode {
                 display: flex;
+                align-items: center;
+                column-gap: 2cqi;
+                h4 {
+                    padding: 0.7cqi 1cqi;
+                    font-size: clamp(10px, 1.5cqi, 15px);
+                    font-weight: 500;
+                }
+                .button-mode {
+                    background-color: $menu-background;
+                    color: white;
+                    padding: 1cqi 1.5cqi;
+                    font-size: clamp(10px, 1.5cqi, 15px);
+                    border-radius: 4px;
+                    border: 2px solid transparent;
+                    @include hover {
+                        background-color: $change-hover-background;
+                    }
+                    &.active {
+                        background-color: $background-menu-active;
+                        color: black;
+                        border: 2px solid $menu-background;
+                    }
+                }
             }
             &.active {
                 display: block;
             }
         }
     }
-
     .image-section {
         img {
             width: 100%;
@@ -99,3 +114,12 @@
         }
     }
 }
+
+//
+.left {
+    width: 295px;
+    @media (width<992px) {
+        display: none;
+    }
+}
+//

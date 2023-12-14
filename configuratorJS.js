@@ -3,6 +3,7 @@ $(function () {
     let area = $(".configurator-area");
     let menuItems = $(".menu-item");
     let selections = $(".selection");
+    let buttonModes = $(".button-mode");
 
     // actions
     $(document).click(function (event) {
@@ -22,6 +23,11 @@ $(function () {
         selections.removeClass("active");
         $(this).addClass("active");
         area.find(`[name=${$(this).data("name")}]`).addClass("active");
+    });
+
+    $(".button-mode").on("click", function () {
+        buttonModes.removeClass("active");
+        $(this).addClass("active");
     });
 
     // changes
