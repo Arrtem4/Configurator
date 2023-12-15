@@ -43,6 +43,8 @@ $(function () {
     });
 
     $(".configurator-area .color-item-facade").on("click", function () {
+        $(".configurator-area .color-item-facade").removeClass("selected");
+        $(this).addClass("selected");
         $(".configurator-area .layer-facade").prop(
             "src",
             `${$(this).data("value")}`
@@ -52,6 +54,8 @@ $(function () {
     });
 
     $(".configurator-area .color-item-plinth").on("click", function () {
+        $(".configurator-area .color-item-plinth").removeClass("selected");
+        $(this).addClass("selected");
         $(".configurator-area .layer-plinth").prop(
             "src",
             `${$(this).data("value")}`
@@ -61,14 +65,18 @@ $(function () {
     });
 
     $(".configurator-area .color-item-angles").on("click", function () {
-        $(".configurator-area .layer-angles").prop(
-            "src",
-            `${$(this).data("value")}`
-        );
+        $(".configurator-area .color-item-angles").removeClass("selected");
+        $(this).addClass("selected");
+        if ($(this).data("value") === "none") {
+            $(".configurator-area .layer-angles").addClass("disabled");
+        } else {
+            $(".configurator-area .layer-angles")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value")}`);
+        }
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
 
     // changes
 });
-

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-.configurator-area .centerRow {
+.centerRow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,6 +173,13 @@
     padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
   }
 }
+.configurator-area .selection-wrapper .selection .color .color-item.selected {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px black;
+}
+.configurator-area .selection-wrapper .selection .color .color-item.selected .text-wrapper {
+  padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
+}
 .configurator-area .selection-wrapper .selection .color.active {
   display: flex;
 }
@@ -194,6 +201,9 @@
 }
 .configurator-area .image-section .layer-angles {
   z-index: 150;
+}
+.configurator-area .image-section .layer-angles.disabled {
+  display: none;
 }
 
 .left {
