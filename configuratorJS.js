@@ -5,7 +5,7 @@ $(function () {
     let selections = $(".configurator-area .selection");
     let buttonModeArr = $(".configurator-area .button-mode");
     let buttonMaterialArr = $(".configurator-area .button-material");
-    let colorArr = $(".configurator-area .color");
+    let colorFacadeArr = $(".configurator-area .color-facade");
 
     // actions
     $(document).click(function (event) {
@@ -35,7 +35,7 @@ $(function () {
 
     $(".configurator-area .button-material").on("click", function () {
         buttonMaterialArr.removeClass("active");
-        colorArr.removeClass("active");
+        colorFacadeArr.removeClass("active");
         $(this).addClass("active");
         area.find(`[name=facade-palette-${$(this).data("value")}]`).addClass(
             "active"
@@ -71,3 +71,4 @@ $(function () {
 
     // changes
 });
+
