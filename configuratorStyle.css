@@ -189,6 +189,7 @@
 .configurator-area .image-section img {
   width: 100%;
   position: absolute;
+  filter: brightness(1.3) saturate(1.5);
 }
 .configurator-area .image-section .image-original {
   z-index: 0;
