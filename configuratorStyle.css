@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-.centerRow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .configurator-area {
   font-family: "Ubuntu", sans-serif;
   container-type: inline-size;
@@ -18,6 +12,18 @@
   box-sizing: border-box;
   user-select: none;
   transition: all 0.2s;
+}
+.configurator-area.fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  background-color: white;
+}
+.configurator-area .centerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .configurator-area .menu-section {
   width: 100%;
@@ -63,13 +69,16 @@
   top: 1px;
   left: -3px;
 }
-.configurator-area .selection-wrapper {
+.configurator-area .image-section {
   width: 100%;
-  position: absolute;
-  z-index: 10000;
-  height: 56.3cqi;
+  height: max-content;
+  position: relative;
 }
-.configurator-area .selection-wrapper .selection {
+.configurator-area .image-section .selection {
+  position: absolute;
+  height: 100%;
+  z-index: 10000;
+  width: 100%;
   align-self: stretch;
   flex-grow: 1;
   background-color: rgba(237, 237, 237, 0.5215686275);
@@ -77,8 +86,8 @@
   display: none;
   overflow: auto;
 }
-.configurator-area .selection-wrapper .selection .mode,
-.configurator-area .selection-wrapper .selection .material {
+.configurator-area .image-section .selection .mode,
+.configurator-area .image-section .selection .material {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -86,17 +95,17 @@
   row-gap: 1cqi;
   margin-bottom: 1cqi;
 }
-.configurator-area .selection-wrapper .selection .mode > h4,
-.configurator-area .selection-wrapper .selection .material > h4 {
+.configurator-area .image-section .selection .mode > h4,
+.configurator-area .image-section .selection .material > h4 {
   font-size: clamp(10px, 1.7cqi, 20px);
   font-weight: 700;
   width: 100%;
   color: black;
 }
-.configurator-area .selection-wrapper .selection .mode .button-mode,
-.configurator-area .selection-wrapper .selection .mode .button-material,
-.configurator-area .selection-wrapper .selection .material .button-mode,
-.configurator-area .selection-wrapper .selection .material .button-material {
+.configurator-area .image-section .selection .mode .button-mode,
+.configurator-area .image-section .selection .mode .button-material,
+.configurator-area .image-section .selection .material .button-mode,
+.configurator-area .image-section .selection .material .button-material {
   background-color: #0088cc;
   color: white;
   padding: 1cqi 1.5cqi;
@@ -104,20 +113,20 @@
   border-radius: 4px;
 }
 @media (hover: hover) {
-  .configurator-area .selection-wrapper .selection .mode .button-mode:hover,
-  .configurator-area .selection-wrapper .selection .mode .button-material:hover,
-  .configurator-area .selection-wrapper .selection .material .button-mode:hover,
-  .configurator-area .selection-wrapper .selection .material .button-material:hover {
+  .configurator-area .image-section .selection .mode .button-mode:hover,
+  .configurator-area .image-section .selection .mode .button-material:hover,
+  .configurator-area .image-section .selection .material .button-mode:hover,
+  .configurator-area .image-section .selection .material .button-material:hover {
     background-color: rgb(0, 156, 235);
   }
 }
-.configurator-area .selection-wrapper .selection .mode .button-mode.active,
-.configurator-area .selection-wrapper .selection .mode .button-material.active,
-.configurator-area .selection-wrapper .selection .material .button-mode.active,
-.configurator-area .selection-wrapper .selection .material .button-material.active {
+.configurator-area .image-section .selection .mode .button-mode.active,
+.configurator-area .image-section .selection .mode .button-material.active,
+.configurator-area .image-section .selection .material .button-mode.active,
+.configurator-area .image-section .selection .material .button-material.active {
   background-color: #026596;
 }
-.configurator-area .selection-wrapper .selection .color {
+.configurator-area .image-section .selection .color {
   display: none;
   flex-wrap: wrap;
   align-items: center;
@@ -125,13 +134,13 @@
   row-gap: 1cqi;
   margin-bottom: 1cqi;
 }
-.configurator-area .selection-wrapper .selection .color h4 {
+.configurator-area .image-section .selection .color h4 {
   font-size: clamp(10px, 1.7cqi, 20px);
   font-weight: 700;
   width: 100%;
   color: black;
 }
-.configurator-area .selection-wrapper .selection .color .background {
+.configurator-area .image-section .selection .color .background {
   width: 100%;
   padding: 2cqi 0;
   border-radius: 4px;
@@ -142,7 +151,7 @@
   column-gap: 2cqi;
   row-gap: 3cqi;
 }
-.configurator-area .selection-wrapper .selection .color .color-item {
+.configurator-area .image-section .selection .color .color-item {
   background-color: white;
   width: clamp(120px, 15cqi, 300px);
   height: clamp(70px, 10cqi, 300px);
@@ -153,46 +162,51 @@
   justify-content: flex-end;
   cursor: pointer;
 }
-.configurator-area .selection-wrapper .selection .color .color-item .text-wrapper {
+.configurator-area .image-section .selection .color .color-item .text-wrapper {
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.638) 0%, transparent 100%);
   padding: 2cqi 0.5cqi 0.3cqi 0.5cqi;
   color: black;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.configurator-area .selection-wrapper .selection .color .color-item .text-wrapper p {
+.configurator-area .image-section .selection .color .color-item .text-wrapper p {
   text-align: center;
   font-weight: 500;
   font-size: clamp(9px, 1.5cqi, 14px);
 }
 @media (hover: hover) {
-  .configurator-area .selection-wrapper .selection .color .color-item:hover {
+  .configurator-area .image-section .selection .color .color-item:hover {
     transform: scale(1.1);
   }
-  .configurator-area .selection-wrapper .selection .color .color-item:hover .text-wrapper {
+  .configurator-area .image-section .selection .color .color-item:hover .text-wrapper {
     padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
   }
 }
-.configurator-area .selection-wrapper .selection .color .color-item.selected {
+.configurator-area .image-section .selection .color .color-item.selected {
   transform: scale(1.1);
   box-shadow: 0px 0px 15px black;
 }
-.configurator-area .selection-wrapper .selection .color .color-item.selected .text-wrapper {
+.configurator-area .image-section .selection .color .color-item.selected .text-wrapper {
   padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
 }
-.configurator-area .selection-wrapper .selection .color.active {
+.configurator-area .image-section .selection .color.active {
   display: flex;
 }
-.configurator-area .selection-wrapper .selection.active {
+.configurator-area .image-section .selection.active {
   display: block;
 }
 .configurator-area .image-section img {
   width: 100%;
-  position: absolute;
   filter: brightness(1.3) saturate(1.5);
 }
 .configurator-area .image-section .image-original {
+  position: relative;
   z-index: 0;
+}
+.configurator-area .image-section .img {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .configurator-area .image-section .layer-facade {
   z-index: 50;
@@ -205,6 +219,24 @@
 }
 .configurator-area .image-section .layer-angles.disabled {
   display: none;
+}
+.configurator-area .image-section .fullscreen-button {
+  background-color: #0088cc;
+  padding: 1cqi 2cqi;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 2cqi;
+  right: 2cqi;
+  z-index: 5000;
+  cursor: pointer;
+}
+.configurator-area .image-section .fullscreen-button p {
+  font-size: clamp(10px, 1.5cqi, 15px);
+}
+@media (hover: hover) {
+  .configurator-area .image-section .fullscreen-button:hover {
+    background-color: rgb(0, 156, 235);
+  }
 }
 
 .left {

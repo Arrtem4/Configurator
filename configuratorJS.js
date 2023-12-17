@@ -7,6 +7,8 @@ $(function () {
     let buttonMaterialArr = $(".configurator-area .button-material");
     let colorFacadeArr = $(".configurator-area .color-facade");
 
+    let fullscreen = false;
+
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
@@ -76,6 +78,19 @@ $(function () {
         }
         selections.removeClass("active");
         menuItems.removeClass("active");
+    });
+
+    $(".fullscreen-button").on("click", function () {
+        let fullscreenButton = $("#fullscreenButton");
+        if (fullscreen) {
+            area.removeClass("fullscreen");
+            fullscreenButton.text("На весь экран");
+            fullscreen = false;
+        } else {
+            area.addClass("fullscreen");
+            fullscreenButton.text("Свернуть");
+            fullscreen = true;
+        }
     });
 
     // changes

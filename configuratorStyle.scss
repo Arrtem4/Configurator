@@ -12,12 +12,6 @@ $background-menu-active: #026596;
 $change-hover-background: rgb(0, 156, 235);
 $menu-background: #0088cc;
 
-.centerRow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .configurator-area {
     * {
         margin: 0;
@@ -31,6 +25,18 @@ $menu-background: #0088cc;
     width: 100%;
     font-weight: 500;
     color: white;
+    &.fullscreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        background-color: white;
+    }
+    .centerRow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .menu-section {
         width: 100%;
         display: flex;
@@ -73,12 +79,15 @@ $menu-background: #0088cc;
             }
         }
     }
-    .selection-wrapper {
+    .image-section {
         width: 100%;
-        position: absolute;
-        z-index: 10000;
-        height: 56.3cqi;
+        height: max-content;
+        position: relative;
         .selection {
+            position: absolute;
+            height: 100%;
+            z-index: 10000;
+            width: 100%;
             align-self: stretch;
             flex-grow: 1;
             background-color: #ededed85;
@@ -186,15 +195,19 @@ $menu-background: #0088cc;
                 display: block;
             }
         }
-    }
-    .image-section {
+
         img {
             width: 100%;
-            position: absolute;
             filter: brightness(1.3) saturate(1.5);
         }
         .image-original {
+            position: relative;
             z-index: 0;
+        }
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         .layer-facade {
             z-index: 50;
@@ -208,9 +221,24 @@ $menu-background: #0088cc;
                 display: none;
             }
         }
+        .fullscreen-button {
+            background-color: $menu-background;
+            padding: 1cqi 2cqi;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 2cqi;
+            right: 2cqi;
+            z-index: 5000;
+            cursor: pointer;
+            p {
+                font-size: clamp(10px, 1.5cqi, 15px);
+            }
+            @include hover {
+                background-color: $change-hover-background;
+            }
+        }
     }
 }
-
 //
 .left {
     width: 295px;
