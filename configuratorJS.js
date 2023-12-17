@@ -83,11 +83,11 @@ $(function () {
     $(".fullscreen-button").on("click", function () {
         let fullscreenButton = $("#fullscreenButton");
         if (fullscreen) {
-            area.removeClass("fullscreen");
+            area.appendTo(".container").removeClass("fullscreen");
             fullscreenButton.text("На весь экран");
             fullscreen = false;
         } else {
-            area.addClass("fullscreen");
+            area.appendTo("body").addClass("fullscreen");
             fullscreenButton.text("Свернуть");
             fullscreen = true;
         }
