@@ -32,6 +32,12 @@ $menu-background: #0088cc;
         height: 100dvh;
         overflow: auto;
         background-color: white;
+        .menu-section{
+            margin-bottom: 0px;
+            .menu-item{
+                border-bottom: 2px solid #376195;
+            }
+        }
     }
     .centerRow {
         display: flex;

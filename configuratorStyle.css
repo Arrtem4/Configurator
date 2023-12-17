@@ -21,6 +21,12 @@
   overflow: auto;
   background-color: white;
 }
+.configurator-area.fullscreen .menu-section {
+  margin-bottom: 0px;
+}
+.configurator-area.fullscreen .menu-section .menu-item {
+  border-bottom: 2px solid #376195;
+}
 .configurator-area .centerRow {
   display: flex;
   align-items: center;
