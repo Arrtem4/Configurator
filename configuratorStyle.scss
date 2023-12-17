@@ -26,10 +26,11 @@ $menu-background: #0088cc;
     font-weight: 500;
     color: white;
     &.fullscreen {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         height: 100dvh;
+        overflow: auto;
         background-color: white;
     }
     .centerRow {
