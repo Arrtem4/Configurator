@@ -159,18 +159,18 @@
   row-gap: 3cqi;
 }
 .configurator-area .image-section .selection .color .color-item {
-  background-color: white;
-  width: clamp(120px, 15cqi, 300px);
-  height: clamp(70px, 10cqi, 300px);
-  box-shadow: 0 0 20px rgba(45, 43, 43, 0.581);
+  width: clamp(120px, 15cqi, 320px);
+  height: clamp(70px, 10cqi, 200px);
+  box-shadow: 0 0 20px rgba(45, 43, 43, 0.647);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  filter: brightness(1.3) saturate(2);
   cursor: pointer;
 }
 .configurator-area .image-section .selection .color .color-item .text-wrapper {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.638) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.638) 0%, transparent 100%);
   padding: 2cqi 0.5cqi 0.3cqi 0.5cqi;
   color: black;
   border-bottom-left-radius: 5px;
@@ -204,7 +204,6 @@
 }
 .configurator-area .image-section img {
   width: 100%;
-  filter: brightness(1.3) saturate(1.5);
 }
 .configurator-area .image-section .image-original {
   position: relative;
@@ -244,6 +243,15 @@
   .configurator-area .image-section .fullscreen-button:hover {
     background-color: rgb(0, 156, 235);
   }
+}
+.configurator-area .image-section .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4000;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(1.3) saturate(1.5);
 }
 
 .left {
