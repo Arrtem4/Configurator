@@ -169,8 +169,8 @@
   cursor: pointer;
 }
 .configurator-area .image-section .selection .color .color-item .text-wrapper {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.638) 0%, transparent 100%);
-  padding: 2cqi 0.5cqi 0.3cqi 0.5cqi;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.748) 0%, transparent 100%);
+  padding: 2cqi 0.5cqi 0.5cqi 0.5cqi;
   color: black;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -178,14 +178,14 @@
 .configurator-area .image-section .selection .color .color-item .text-wrapper p {
   text-align: center;
   font-weight: 500;
-  font-size: clamp(9px, 1.5cqi, 14px);
+  font-size: clamp(10px, 1.3cqi, 20px);
 }
 @media (hover: hover) {
   .configurator-area .image-section .selection .color .color-item:hover {
     transform: scale(1.1);
   }
   .configurator-area .image-section .selection .color .color-item:hover .text-wrapper {
-    padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
+    padding: 3cqi 0.5cqi 2cqi 0.5cqi;
   }
 }
 .configurator-area .image-section .selection .color .color-item.selected {
@@ -193,7 +193,7 @@
   box-shadow: 0px 0px 15px black;
 }
 .configurator-area .image-section .selection .color .color-item.selected .text-wrapper {
-  padding: 3cqi 0.5cqi 1.7cqi 0.5cqi;
+  padding: 3cqi 0.5cqi 2cqi 0.5cqi;
 }
 .configurator-area .image-section .selection .color.active {
   display: flex;
