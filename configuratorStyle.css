@@ -166,7 +166,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  filter: brightness(1.3) saturate(2);
   cursor: pointer;
 }
 .configurator-area .image-section .selection .color .color-item .text-wrapper {
@@ -251,7 +250,7 @@
   z-index: 4000;
   width: 100%;
   height: 100%;
-  backdrop-filter: brightness(1.3) saturate(1.5);
+  backdrop-filter: brightness(1.2) saturate(1.5);
 }
 
 .left {
