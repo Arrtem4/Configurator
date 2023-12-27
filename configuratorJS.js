@@ -4,11 +4,15 @@ $(function () {
     let menuItems = $(".configurator-area .menu-item");
     let selections = $(".configurator-area .selection");
     let buttonModeArr = $(".configurator-area .button-mode");
-    let buttonMaterialArr = $(".configurator-area .button-material");
+    let buttonFacadeMaterialArr = $(
+        ".configurator-area .button-material-facade"
+    );
+    let buttonPlinthMaterialArr = $(
+        ".configurator-area .button-material-plinth"
+    );
     let colorFacadeArr = $(".configurator-area .color-facade");
-
+    let colorPlinthArr = $(".configurator-area .color-plinth");
     let fullscreen = false;
-
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
@@ -16,7 +20,6 @@ $(function () {
             menuItems.removeClass("active");
         }
     });
-
     menuItems.on("click", function () {
         if ($(this).hasClass("active")) {
             $(this).removeClass("active");
@@ -29,21 +32,28 @@ $(function () {
         $(this).addClass("active");
         area.find(`[name=${$(this).data("name")}]`).addClass("active");
     });
-
     $(".configurator-area .button-mode").on("click", function () {
         buttonModeArr.removeClass("active");
         $(this).addClass("active");
     });
-
-    $(".configurator-area .button-material").on("click", function () {
-        buttonMaterialArr.removeClass("active");
+    // material mode
+    $(".configurator-area .button-material-facade").on("click", function () {
+        buttonFacadeMaterialArr.removeClass("active");
         colorFacadeArr.removeClass("active");
         $(this).addClass("active");
         area.find(`[name=facade-palette-${$(this).data("value")}]`).addClass(
             "active"
         );
     });
-
+    $(".configurator-area .button-material-plinth").on("click", function () {
+        buttonPlinthMaterialArr.removeClass("active");
+        colorPlinthArr.removeClass("active");
+        $(this).addClass("active");
+        area.find(`[name=plinth-palette-${$(this).data("value")}]`).addClass(
+            "active"
+        );
+    });
+    // color mode
     $(".configurator-area .color-item-facade").on("click", function () {
         $(".configurator-area .color-item-facade").removeClass("selected");
         $(this).addClass("selected");
@@ -54,7 +64,6 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
-
     $(".configurator-area .color-item-plinth").on("click", function () {
         $(".configurator-area .color-item-plinth").removeClass("selected");
         $(this).addClass("selected");
@@ -65,7 +74,6 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
-
     $(".configurator-area .color-item-angles").on("click", function () {
         $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("selected");
@@ -79,7 +87,7 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
-
+    // fullscreen button
     $(".fullscreen-button").on("click", function () {
         let fullscreenButton = $("#fullscreenButton");
         if (fullscreen) {
@@ -92,6 +100,4 @@ $(function () {
             fullscreen = true;
         }
     });
-
-    // changes
 });
