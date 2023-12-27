@@ -153,6 +153,10 @@ $menu-background: #0088cc;
                     justify-content: space-between;
                     column-gap: 2cqi;
                     row-gap: 3cqi;
+                    &_window {
+                        justify-content: flex-start;
+                        column-gap: 6cqi;
+                    }
                 }
                 .color-item {
                     width: clamp(120px, 15cqi, 320px);

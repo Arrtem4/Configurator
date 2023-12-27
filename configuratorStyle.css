@@ -158,6 +158,10 @@
   column-gap: 2cqi;
   row-gap: 3cqi;
 }
+.configurator-area .image-section .selection .color .background_window {
+  justify-content: flex-start;
+  column-gap: 6cqi;
+}
 .configurator-area .image-section .selection .color .color-item {
   width: clamp(120px, 15cqi, 320px);
   height: clamp(70px, 10cqi, 200px);

@@ -87,6 +87,16 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
+    $(".configurator-area .color-item-window").on("click", function () {
+        $(".configurator-area .color-item-window").removeClass("selected");
+        $(this).addClass("selected");
+        $(".configurator-area .layer-window").prop(
+            "src",
+            `${$(this).data("value")}`
+        );
+        selections.removeClass("active");
+        menuItems.removeClass("active");
+    });
     // fullscreen button
     $(".fullscreen-button").on("click", function () {
         let fullscreenButton = $("#fullscreenButton");
