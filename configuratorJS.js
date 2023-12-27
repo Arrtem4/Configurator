@@ -103,22 +103,28 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
-    // $(".configurator-area .color-item-framing").on("click", function () {
-    //     $(".configurator-area .color-item-framing").removeClass("selected");
-    //     $(this).addClass("selected");
-    //     $(".configurator-area .layer-framing").prop(
-    //         "src",
-    //         `${$(this).data("value")}`
-    //     );
-    //     selections.removeClass("active");
-    //     menuItems.removeClass("active");
-    // });
+    $(".configurator-area .color-item-framing").on("click", function () {
+        $(".configurator-area .color-item-framing").removeClass("selected");
+        $(this).addClass("selected");
+        $(".configurator-area .layer-frames").prop(
+            "src",
+            `${$(this).data("value")}`
+        );
+        selections.removeClass("active");
+        menuItems.removeClass("active");
+    });
     $(".configurator-area .color-item-angles").on("click", function () {
         $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("selected");
-        $(".configurator-area .layer-angles")
-            .removeClass("disabled")
-            .prop("src", `${$(this).data("value")}`);
+        if (anglesStyleMode === 1) {
+            $(".configurator-area .layer-angles")
+                .removeClass("disabled")
+                .prop("src", `res/angles/solid/${$(this).data("value")}`);
+        } else {
+            $(".configurator-area .layer-angles")
+                .removeClass("disabled")
+                .prop("src", `res/angles/dotted/${$(this).data("value")}`);
+        }
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
@@ -143,7 +149,7 @@ $(function () {
             return $(".configurator-area .layer-angles").addClass("disabled");
         } else {
             $(".configurator-area .angles-style-hidden").addClass("show");
-            return (anglesStyleMode = $(this).data("value"));
+            anglesStyleMode = $(this).data("value");
         }
     });
 
