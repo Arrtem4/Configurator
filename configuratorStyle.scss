@@ -116,7 +116,8 @@ $menu-background: #0088cc;
                     color: black;
                 }
                 .button-mode,
-                .button-material {
+                .button-material,
+                .button-angles-style {
                     background-color: $menu-background;
                     color: white;
                     padding: 1cqi 1.5cqi;
@@ -205,6 +206,12 @@ $menu-background: #0088cc;
                 display: block;
             }
         }
+        .angles-style-hidden {
+            display: none;
+            &.show {
+                display: block;
+            }
+        }
 
         img {
             width: 100%;
@@ -224,11 +231,17 @@ $menu-background: #0088cc;
         .layer-plinth {
             z-index: 100;
         }
+        .layer-frames {
+            z-index: 200;
+        }
         .layer-angles {
             z-index: 150;
             &.disabled {
                 display: none;
             }
+        }
+        .layer-window {
+            z-index: 300;
         }
         .fullscreen-button {
             background-color: $menu-background;

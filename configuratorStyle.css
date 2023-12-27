@@ -111,8 +111,10 @@
 }
 .configurator-area .image-section .selection .mode .button-mode,
 .configurator-area .image-section .selection .mode .button-material,
+.configurator-area .image-section .selection .mode .button-angles-style,
 .configurator-area .image-section .selection .material .button-mode,
-.configurator-area .image-section .selection .material .button-material {
+.configurator-area .image-section .selection .material .button-material,
+.configurator-area .image-section .selection .material .button-angles-style {
   background-color: #0088cc;
   color: white;
   padding: 1cqi 1.5cqi;
@@ -122,15 +124,19 @@
 @media (hover: hover) {
   .configurator-area .image-section .selection .mode .button-mode:hover,
   .configurator-area .image-section .selection .mode .button-material:hover,
+  .configurator-area .image-section .selection .mode .button-angles-style:hover,
   .configurator-area .image-section .selection .material .button-mode:hover,
-  .configurator-area .image-section .selection .material .button-material:hover {
+  .configurator-area .image-section .selection .material .button-material:hover,
+  .configurator-area .image-section .selection .material .button-angles-style:hover {
     background-color: rgb(0, 156, 235);
   }
 }
 .configurator-area .image-section .selection .mode .button-mode.active,
 .configurator-area .image-section .selection .mode .button-material.active,
+.configurator-area .image-section .selection .mode .button-angles-style.active,
 .configurator-area .image-section .selection .material .button-mode.active,
-.configurator-area .image-section .selection .material .button-material.active {
+.configurator-area .image-section .selection .material .button-material.active,
+.configurator-area .image-section .selection .material .button-angles-style.active {
   background-color: #026596;
 }
 .configurator-area .image-section .selection .color {
@@ -205,6 +211,12 @@
 .configurator-area .image-section .selection.active {
   display: block;
 }
+.configurator-area .image-section .angles-style-hidden {
+  display: none;
+}
+.configurator-area .image-section .angles-style-hidden.show {
+  display: block;
+}
 .configurator-area .image-section img {
   width: 100%;
 }
@@ -223,11 +235,17 @@
 .configurator-area .image-section .layer-plinth {
   z-index: 100;
 }
+.configurator-area .image-section .layer-frames {
+  z-index: 200;
+}
 .configurator-area .image-section .layer-angles {
   z-index: 150;
 }
 .configurator-area .image-section .layer-angles.disabled {
   display: none;
+}
+.configurator-area .image-section .layer-window {
+  z-index: 300;
 }
 .configurator-area .image-section .fullscreen-button {
   background-color: #0088cc;
