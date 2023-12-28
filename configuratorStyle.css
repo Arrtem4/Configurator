@@ -237,6 +237,13 @@
   z-index: 50;
   top: 1px;
 }
+.configurator-area .image-section .layer-facade-second {
+  z-index: 60;
+  top: 1px;
+}
+.configurator-area .image-section .layer-facade-second.disabled {
+  display: none;
+}
 .configurator-area .image-section .layer-plinth {
   z-index: 100;
   left: -1px;

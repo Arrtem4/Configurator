@@ -3,8 +3,9 @@ $(function () {
     let area = $(".configurator-area");
     let menuItems = $(".configurator-area .menu-item");
     let selections = $(".configurator-area .selection");
-    let buttonModeArr = $(".configurator-area .button-mode");
+
     let buttonStyleArr = $(".configurator-area .button-angles-style");
+
     let buttonFacadeMaterialArr = $(
         ".configurator-area .button-material-facade"
     );
@@ -20,6 +21,12 @@ $(function () {
     let buttonInsertsMaterialArr = $(
         ".configurator-area .button-material-inserts"
     );
+
+    // level buttons
+    let levelButtonsArrFacade = $(".configurator-area .button-mode-facade");
+    let levelButtonsArrFrame = $(".configurator-area .button-mode-frame");
+    let levelButtonsArrAngle = $(".configurator-area .button-mode-angle");
+    let levelButtonsArrInsert = $(".configurator-area .button-mode-insert");
 
     //color array
     let colorFacadeArr = $(".configurator-area .color-facade");
@@ -51,8 +58,10 @@ $(function () {
         $(this).addClass("active");
         area.find(`[name=${$(this).data("name")}]`).addClass("active");
     });
+
+    // level mode
     $(".configurator-area .button-mode").on("click", function () {
-        buttonModeArr.removeClass("active");
+        levelButtonsArrFacade.removeClass("active");
         $(this).addClass("active");
     });
 

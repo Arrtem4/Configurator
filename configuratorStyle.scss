@@ -229,6 +229,13 @@ $menu-background: #0088cc;
         .layer-facade {
             z-index: 50;
             top: 1px;
+            &-second{
+                z-index: 60;
+                top: 1px;
+                &.disabled {
+                    display: none;
+                }
+            }
         }
         .layer-plinth {
             z-index: 100;
