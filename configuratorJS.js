@@ -80,6 +80,7 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .color-item-framing").removeClass("selected");
             $(".configurator-area .frames-style-hidden").removeClass("show");
             return $(".configurator-area .layer-frames").addClass("disabled");
         } else {
@@ -96,6 +97,7 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .color-item-angles").removeClass("selected");
             $(".configurator-area .angles-style-hidden").removeClass("show");
             return $(".configurator-area .layer-angles").addClass("disabled");
         } else {
@@ -112,6 +114,7 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .color-item-inserts").removeClass("selected");
             $(".configurator-area .inserts-style-hidden").removeClass("show");
             return $(".configurator-area .layer-inserts").addClass("disabled");
         } else {
