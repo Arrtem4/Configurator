@@ -224,7 +224,6 @@ $(function () {
         $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("selected");
         if (anglesStyleMode === 1) {
-            console.log(angleLevelValue);
             if (angleLevelValue === 0) {
                 $(".configurator-area .layer-angles-1").addClass("disabled");
                 $(".configurator-area .layer-angles-2").addClass("disabled");
@@ -243,7 +242,6 @@ $(function () {
                     .prop("src", `res/angles/solid/${$(this).data("value2")}`);
             }
         } else {
-            console.log(angleLevelValue);
             if (angleLevelValue === 0) {
                 $(".configurator-area .layer-angles-1").addClass("disabled");
                 $(".configurator-area .layer-angles-2").addClass("disabled");
@@ -268,9 +266,21 @@ $(function () {
     $(".configurator-area .color-item-inserts").on("click", function () {
         $(".configurator-area .color-item-inserts").removeClass("selected");
         $(this).addClass("selected");
-        $(".configurator-area .layer-inserts")
-            .removeClass("disabled")
-            .prop("src", `${$(this).data("value")}`);
+        if (insertLevelValue === 0) {
+            $(".configurator-area .layer-inserts-1").addClass("disabled");
+            $(".configurator-area .layer-inserts-2").addClass("disabled");
+            $(".configurator-area .layer-inserts")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value")}`);
+        } else if (insertLevelValue === 1) {
+            $(".configurator-area .layer-inserts-1")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value1")}`);
+        } else {
+            $(".configurator-area .layer-inserts-2")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value2")}`);
+        }
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
