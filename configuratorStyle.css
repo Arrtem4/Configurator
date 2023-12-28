@@ -254,6 +254,12 @@
 .configurator-area .image-section .layer-angles.disabled {
   display: none;
 }
+.configurator-area .image-section .layer-inserts {
+  z-index: 250;
+}
+.configurator-area .image-section .layer-inserts.disabled {
+  display: none;
+}
 .configurator-area .image-section .layer-window {
   z-index: 300;
 }

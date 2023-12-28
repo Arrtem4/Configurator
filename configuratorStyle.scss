@@ -247,6 +247,12 @@ $menu-background: #0088cc;
                 display: none;
             }
         }
+        .layer-inserts {
+            z-index: 250;
+            &.disabled {
+                display: none;
+            }
+        }
         .layer-window {
             z-index: 300;
         }
