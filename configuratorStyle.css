@@ -262,6 +262,18 @@
 .configurator-area .image-section .layer-frames.disabled {
   display: none;
 }
+.configurator-area .image-section .layer-frames-1 {
+  z-index: 260;
+}
+.configurator-area .image-section .layer-frames-1.disabled {
+  display: none;
+}
+.configurator-area .image-section .layer-frames-2 {
+  z-index: 270;
+}
+.configurator-area .image-section .layer-frames-2.disabled {
+  display: none;
+}
 .configurator-area .image-section .layer-angles {
   z-index: 150;
 }

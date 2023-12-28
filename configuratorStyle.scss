@@ -254,6 +254,18 @@ $menu-background: #0088cc;
             &.disabled {
                 display: none;
             }
+            &-1 {
+                z-index: 260;
+                &.disabled {
+                    display: none;
+                }
+            }
+            &-2 {
+                z-index: 270;
+                &.disabled {
+                    display: none;
+                }
+            }
         }
         .layer-angles {
             z-index: 150;

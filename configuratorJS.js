@@ -72,8 +72,9 @@ $(function () {
         $(this).addClass("active");
         facadeLevelValue = $(this).data("value");
     });
-    $(".configurator-area .button-mode-facade").on("click", function () {
+    $(".configurator-area .button-mode-frame").on("click", function () {
         levelButtonsArrFrame.removeClass("active");
+        $(".configurator-area .color-item-framing").removeClass("selected");
         $(this).addClass("active");
         frameLevelValue = $(this).data("value");
     });
@@ -112,6 +113,8 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .layer-frames-1").addClass("disabled");
+            $(".configurator-area .layer-frames-2").addClass("disabled");
             $(".configurator-area .color-item-framing").removeClass("selected");
             $(".configurator-area .frames-style-hidden").removeClass("show");
             return $(".configurator-area .layer-frames").addClass("disabled");
@@ -193,9 +196,21 @@ $(function () {
     $(".configurator-area .color-item-framing").on("click", function () {
         $(".configurator-area .color-item-framing").removeClass("selected");
         $(this).addClass("selected");
-        $(".configurator-area .layer-frames")
-            .removeClass("disabled")
-            .prop("src", `${$(this).data("value")}`);
+        if (frameLevelValue === 0) {
+            $(".configurator-area .layer-frames-1").addClass("disabled");
+            $(".configurator-area .layer-frames-2").addClass("disabled");
+            $(".configurator-area .layer-frames")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value")}`);
+        } else if (frameLevelValue === 1) {
+            $(".configurator-area .layer-frames-1")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value1")}`);
+        } else {
+            $(".configurator-area .layer-frames-2")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value2")}`);
+        }
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
