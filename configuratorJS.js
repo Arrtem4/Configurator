@@ -17,12 +17,21 @@ $(function () {
     let buttonAnglesMaterialArr = $(
         ".configurator-area .button-material-angles"
     );
+    let buttonInsertsMaterialArr = $(
+        ".configurator-area .button-material-inserts"
+    );
+
+    //color array
     let colorFacadeArr = $(".configurator-area .color-facade");
     let colorPlinthArr = $(".configurator-area .color-plinth");
     let colorFramingArr = $(".configurator-area .color-framing");
     let colorAnglesArr = $(".configurator-area .color-angles");
+    let colorInsertsArr = $(".configurator-area .color-inserts");
+
+    // modes state
     let fullscreen = false;
-    let anglesStyleMode = 0;
+    let anglesStyleMode = 1;
+
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
@@ -96,6 +105,22 @@ $(function () {
             ).addClass("active");
         }
     });
+    $(".configurator-area .button-material-inserts").on("click", function () {
+        buttonInsertsMaterialArr.removeClass("active");
+        colorInsertsArr.removeClass("active");
+        $(this).addClass("active");
+        if ($(this).data("value") === 0) {
+            selections.removeClass("active");
+            menuItems.removeClass("active");
+            $(".configurator-area .inserts-style-hidden").removeClass("show");
+            return $(".configurator-area .layer-inserts").addClass("disabled");
+        } else {
+            $(".configurator-area .inserts-style-hidden").addClass("show");
+            area.find(
+                `[name=inserts-palette-${$(this).data("value")}]`
+            ).addClass("active");
+        }
+    });
 
     // color mode
     $(".configurator-area .color-item-facade").on("click", function () {
@@ -139,6 +164,15 @@ $(function () {
                 .removeClass("disabled")
                 .prop("src", `res/angles/dotted/${$(this).data("value")}`);
         }
+        selections.removeClass("active");
+        menuItems.removeClass("active");
+    });
+    $(".configurator-area .color-item-inserts").on("click", function () {
+        $(".configurator-area .color-item-inserts").removeClass("selected");
+        $(this).addClass("selected");
+        $(".configurator-area .layer-inserts")
+            .removeClass("disabled")
+            .prop("src", `${$(this).data("value")}`);
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
