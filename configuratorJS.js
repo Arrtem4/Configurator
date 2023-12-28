@@ -68,9 +68,17 @@ $(function () {
         buttonFramingMaterialArr.removeClass("active");
         colorFramingArr.removeClass("active");
         $(this).addClass("active");
-        area.find(`[name=framing-palette-${$(this).data("value")}]`).addClass(
-            "active"
-        );
+        if ($(this).data("value") === 0) {
+            selections.removeClass("active");
+            menuItems.removeClass("active");
+            $(".configurator-area .frames-style-hidden").removeClass("show");
+            return $(".configurator-area .layer-frames").addClass("disabled");
+        } else {
+            $(".configurator-area .frames-style-hidden").addClass("show");
+            area.find(
+                `[name=framing-palette-${$(this).data("value")}]`
+            ).addClass("active");
+        }
     });
     $(".configurator-area .button-material-angles").on("click", function () {
         buttonAnglesMaterialArr.removeClass("active");
@@ -105,10 +113,9 @@ $(function () {
     $(".configurator-area .color-item-framing").on("click", function () {
         $(".configurator-area .color-item-framing").removeClass("selected");
         $(this).addClass("selected");
-        $(".configurator-area .layer-frames").prop(
-            "src",
-            `${$(this).data("value")}`
-        );
+        $(".configurator-area .layer-frames")
+            .removeClass("disabled")
+            .prop("src", `${$(this).data("value")}`);
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
@@ -137,7 +144,7 @@ $(function () {
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
-    // style-angles mode
+    // style mode
     $(".configurator-area .button-angles-style").on("click", function () {
         buttonStyleArr.removeClass("active");
         $(this).addClass("active");

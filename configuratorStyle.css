@@ -211,10 +211,14 @@
 .configurator-area .image-section .selection.active {
   display: block;
 }
-.configurator-area .image-section .angles-style-hidden {
+.configurator-area .image-section .angles-style-hidden,
+.configurator-area .image-section .inserts-style-hidden,
+.configurator-area .image-section .frames-style-hidden {
   display: none;
 }
-.configurator-area .image-section .angles-style-hidden.show {
+.configurator-area .image-section .angles-style-hidden.show,
+.configurator-area .image-section .inserts-style-hidden.show,
+.configurator-area .image-section .frames-style-hidden.show {
   display: block;
 }
 .configurator-area .image-section img {
@@ -240,6 +244,9 @@
 }
 .configurator-area .image-section .layer-frames {
   z-index: 200;
+}
+.configurator-area .image-section .layer-frames.disabled {
+  display: none;
 }
 .configurator-area .image-section .layer-angles {
   z-index: 150;

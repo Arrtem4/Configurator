@@ -206,7 +206,9 @@ $menu-background: #0088cc;
                 display: block;
             }
         }
-        .angles-style-hidden {
+        .angles-style-hidden,
+        .inserts-style-hidden,
+        .frames-style-hidden {
             display: none;
             &.show {
                 display: block;
@@ -235,6 +237,9 @@ $menu-background: #0088cc;
         }
         .layer-frames {
             z-index: 200;
+            &.disabled {
+                display: none;
+            }
         }
         .layer-angles {
             z-index: 150;
