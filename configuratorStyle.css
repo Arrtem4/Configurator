@@ -231,9 +231,12 @@
 }
 .configurator-area .image-section .layer-facade {
   z-index: 50;
+  top: 1px;
 }
 .configurator-area .image-section .layer-plinth {
   z-index: 100;
+  left: -1px;
+  top: -1px;
 }
 .configurator-area .image-section .layer-frames {
   z-index: 200;

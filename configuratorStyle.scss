@@ -227,9 +227,12 @@ $menu-background: #0088cc;
         }
         .layer-facade {
             z-index: 50;
+            top: 1px;
         }
         .layer-plinth {
             z-index: 100;
+            left: -1px;
+            top: -1px;
         }
         .layer-frames {
             z-index: 200;
