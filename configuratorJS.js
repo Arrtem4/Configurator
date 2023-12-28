@@ -37,7 +37,13 @@ $(function () {
 
     // modes state
     let fullscreen = false;
+
     let anglesStyleMode = 1;
+
+    let facadeLevelValue = 0;
+    let frameLevelValue = 0;
+    let angleLevelValue = 0;
+    let insertLevelValue = 0;
 
     // actions
     $(document).click(function (event) {
@@ -60,9 +66,26 @@ $(function () {
     });
 
     // level mode
-    $(".configurator-area .button-mode").on("click", function () {
+    $(".configurator-area .button-mode-facade").on("click", function () {
         levelButtonsArrFacade.removeClass("active");
+        $(".configurator-area .color-item-facade").removeClass("selected");
         $(this).addClass("active");
+        facadeLevelValue = $(this).data("value");
+    });
+    $(".configurator-area .button-mode-facade").on("click", function () {
+        levelButtonsArrFrame.removeClass("active");
+        $(this).addClass("active");
+        frameLevelValue = $(this).data("value");
+    });
+    $(".configurator-area .button-mode-facade").on("click", function () {
+        levelButtonsArrAngle.removeClass("active");
+        $(this).addClass("active");
+        angleLevelValue = $(this).data("value");
+    });
+    $(".configurator-area .button-mode-facade").on("click", function () {
+        levelButtonsArrInsert.removeClass("active");
+        $(this).addClass("active");
+        insertLevelValue = $(this).data("value");
     });
 
     // material mode
@@ -138,10 +161,22 @@ $(function () {
     $(".configurator-area .color-item-facade").on("click", function () {
         $(".configurator-area .color-item-facade").removeClass("selected");
         $(this).addClass("selected");
-        $(".configurator-area .layer-facade").prop(
-            "src",
-            `${$(this).data("value")}`
-        );
+        if (facadeLevelValue === 0) {
+            $(".configurator-area .layer-facade-1").addClass("disabled");
+            $(".configurator-area .layer-facade-2").addClass("disabled");
+            $(".configurator-area .layer-facade").prop(
+                "src",
+                `${$(this).data("value")}`
+            );
+        } else if (facadeLevelValue === 1) {
+            $(".configurator-area .layer-facade-1")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value1")}`);
+        } else {
+            $(".configurator-area .layer-facade-2")
+                .removeClass("disabled")
+                .prop("src", `${$(this).data("value2")}`);
+        }
         selections.removeClass("active");
         menuItems.removeClass("active");
     });
