@@ -84,9 +84,17 @@ $(function () {
         buttonAnglesMaterialArr.removeClass("active");
         colorAnglesArr.removeClass("active");
         $(this).addClass("active");
-        area.find(`[name=angles-palette-${$(this).data("value")}]`).addClass(
-            "active"
-        );
+        if ($(this).data("value") === 0) {
+            selections.removeClass("active");
+            menuItems.removeClass("active");
+            $(".configurator-area .angles-style-hidden").removeClass("show");
+            return $(".configurator-area .layer-angles").addClass("disabled");
+        } else {
+            $(".configurator-area .angles-style-hidden").addClass("show");
+            area.find(
+                `[name=angles-palette-${$(this).data("value")}]`
+            ).addClass("active");
+        }
     });
 
     // color mode
@@ -147,16 +155,9 @@ $(function () {
     // style mode
     $(".configurator-area .button-angles-style").on("click", function () {
         buttonStyleArr.removeClass("active");
+        $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("active");
-        if ($(this).data("value") === 0) {
-            selections.removeClass("active");
-            menuItems.removeClass("active");
-            $(".configurator-area .angles-style-hidden").removeClass("show");
-            return $(".configurator-area .layer-angles").addClass("disabled");
-        } else {
-            $(".configurator-area .angles-style-hidden").addClass("show");
-            anglesStyleMode = $(this).data("value");
-        }
+        anglesStyleMode = $(this).data("value");
     });
 
     // fullscreen button
