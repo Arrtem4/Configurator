@@ -272,11 +272,35 @@ $menu-background: #0088cc;
             &.disabled {
                 display: none;
             }
+            &-1 {
+                z-index: 160;
+                &.disabled {
+                    display: none;
+                }
+            }
+            &-2 {
+                z-index: 170;
+                &.disabled {
+                    display: none;
+                }
+            }
         }
         .layer-inserts {
             z-index: 200;
             &.disabled {
                 display: none;
+            }
+            &-1 {
+                z-index: 210;
+                &.disabled {
+                    display: none;
+                }
+            }
+            &-2 {
+                z-index: 220;
+                &.disabled {
+                    display: none;
+                }
             }
         }
         .layer-window {

@@ -280,10 +280,34 @@
 .configurator-area .image-section .layer-angles.disabled {
   display: none;
 }
+.configurator-area .image-section .layer-angles-1 {
+  z-index: 160;
+}
+.configurator-area .image-section .layer-angles-1.disabled {
+  display: none;
+}
+.configurator-area .image-section .layer-angles-2 {
+  z-index: 170;
+}
+.configurator-area .image-section .layer-angles-2.disabled {
+  display: none;
+}
 .configurator-area .image-section .layer-inserts {
   z-index: 200;
 }
 .configurator-area .image-section .layer-inserts.disabled {
+  display: none;
+}
+.configurator-area .image-section .layer-inserts-1 {
+  z-index: 210;
+}
+.configurator-area .image-section .layer-inserts-1.disabled {
+  display: none;
+}
+.configurator-area .image-section .layer-inserts-2 {
+  z-index: 220;
+}
+.configurator-area .image-section .layer-inserts-2.disabled {
   display: none;
 }
 .configurator-area .image-section .layer-window {

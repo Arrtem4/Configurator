@@ -78,13 +78,15 @@ $(function () {
         $(this).addClass("active");
         frameLevelValue = $(this).data("value");
     });
-    $(".configurator-area .button-mode-facade").on("click", function () {
+    $(".configurator-area .button-mode-angle").on("click", function () {
         levelButtonsArrAngle.removeClass("active");
+        $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("active");
         angleLevelValue = $(this).data("value");
     });
-    $(".configurator-area .button-mode-facade").on("click", function () {
+    $(".configurator-area .button-mode-insert").on("click", function () {
         levelButtonsArrInsert.removeClass("active");
+        $(".configurator-area .color-item-inserts").removeClass("selected");
         $(this).addClass("active");
         insertLevelValue = $(this).data("value");
     });
@@ -132,6 +134,8 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .layer-angles-1").addClass("disabled");
+            $(".configurator-area .layer-angles-2").addClass("disabled");
             $(".configurator-area .color-item-angles").removeClass("selected");
             $(".configurator-area .angles-style-hidden").removeClass("show");
             return $(".configurator-area .layer-angles").addClass("disabled");
@@ -149,6 +153,8 @@ $(function () {
         if ($(this).data("value") === 0) {
             selections.removeClass("active");
             menuItems.removeClass("active");
+            $(".configurator-area .layer-inserts-1").addClass("disabled");
+            $(".configurator-area .layer-inserts-2").addClass("disabled");
             $(".configurator-area .color-item-inserts").removeClass("selected");
             $(".configurator-area .inserts-style-hidden").removeClass("show");
             return $(".configurator-area .layer-inserts").addClass("disabled");
@@ -218,13 +224,43 @@ $(function () {
         $(".configurator-area .color-item-angles").removeClass("selected");
         $(this).addClass("selected");
         if (anglesStyleMode === 1) {
-            $(".configurator-area .layer-angles")
-                .removeClass("disabled")
-                .prop("src", `res/angles/solid/${$(this).data("value")}`);
+            console.log(angleLevelValue);
+            if (angleLevelValue === 0) {
+                $(".configurator-area .layer-angles-1").addClass("disabled");
+                $(".configurator-area .layer-angles-2").addClass("disabled");
+                $(".configurator-area .layer-angles")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/solid/${$(this).data("value")}`);
+            } else if (angleLevelValue === 1) {
+                $(".configurator-area .layer-angles").addClass("disabled");
+                $(".configurator-area .layer-angles-1")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/solid/${$(this).data("value1")}`);
+            } else {
+                $(".configurator-area .layer-angles").addClass("disabled");
+                $(".configurator-area .layer-angles-2")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/solid/${$(this).data("value2")}`);
+            }
         } else {
-            $(".configurator-area .layer-angles")
-                .removeClass("disabled")
-                .prop("src", `res/angles/dotted/${$(this).data("value")}`);
+            console.log(angleLevelValue);
+            if (angleLevelValue === 0) {
+                $(".configurator-area .layer-angles-1").addClass("disabled");
+                $(".configurator-area .layer-angles-2").addClass("disabled");
+                $(".configurator-area .layer-angles")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/dotted/${$(this).data("value")}`);
+            } else if (angleLevelValue === 1) {
+                $(".configurator-area .layer-angles").addClass("disabled");
+                $(".configurator-area .layer-angles-1")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/dotted/${$(this).data("value1")}`);
+            } else {
+                $(".configurator-area .layer-angles").addClass("disabled");
+                $(".configurator-area .layer-angles-2")
+                    .removeClass("disabled")
+                    .prop("src", `res/angles/dotted/${$(this).data("value2")}`);
+            }
         }
         selections.removeClass("active");
         menuItems.removeClass("active");
