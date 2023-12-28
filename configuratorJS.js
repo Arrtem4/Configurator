@@ -73,7 +73,6 @@ $(function () {
         );
     });
     $(".configurator-area .button-material-angles").on("click", function () {
-        console.log($(this).data("value"));
         buttonAnglesMaterialArr.removeClass("active");
         colorAnglesArr.removeClass("active");
         $(this).addClass("active");
