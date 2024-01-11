@@ -3,9 +3,7 @@ $(function () {
     let area = $(".configurator-area");
     let menuItems = $(".configurator-area .menu-item");
     let selections = $(".configurator-area .selection");
-
     let buttonStyleArr = $(".configurator-area .button-angles-style");
-
     let buttonFacadeMaterialArr = $(
         ".configurator-area .button-material-facade"
     );
@@ -21,30 +19,24 @@ $(function () {
     let buttonInsertsMaterialArr = $(
         ".configurator-area .button-material-inserts"
     );
-
     // level buttons
     let levelButtonsArrFacade = $(".configurator-area .button-mode-facade");
     let levelButtonsArrFrame = $(".configurator-area .button-mode-frame");
     let levelButtonsArrAngle = $(".configurator-area .button-mode-angle");
     let levelButtonsArrInsert = $(".configurator-area .button-mode-insert");
-
     //color array
     let colorFacadeArr = $(".configurator-area .color-facade");
     let colorPlinthArr = $(".configurator-area .color-plinth");
     let colorFramingArr = $(".configurator-area .color-framing");
     let colorAnglesArr = $(".configurator-area .color-angles");
     let colorInsertsArr = $(".configurator-area .color-inserts");
-
     // modes state
     let fullscreen = false;
-
     let anglesStyleMode = 1;
-
     let facadeLevelValue = 0;
     let frameLevelValue = 0;
     let angleLevelValue = 0;
     let insertLevelValue = 0;
-
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
@@ -64,7 +56,6 @@ $(function () {
         $(this).addClass("active");
         area.find(`[name=${$(this).data("name")}]`).addClass("active");
     });
-
     // level mode
     $(".configurator-area .button-mode-facade").on("click", function () {
         levelButtonsArrFacade.removeClass("active");
@@ -165,7 +156,6 @@ $(function () {
             ).addClass("active");
         }
     });
-
     // color mode
     $(".configurator-area .color-item-facade").on("click", function () {
         $(".configurator-area .color-item-facade").removeClass("selected");
@@ -301,7 +291,6 @@ $(function () {
         $(this).addClass("active");
         anglesStyleMode = $(this).data("value");
     });
-
     // fullscreen button
     $(".fullscreen-button").on("click", function () {
         let fullscreenButton = $("#fullscreenButton");

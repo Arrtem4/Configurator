@@ -19,7 +19,7 @@
         <div class="container" style="width: 100%;">
             <!-- конфигуратор -->
             <section class="configurator-area" id="configurator-area">
-                <!-- меню элементы -->
+                <!-- меню элементы визуал -->
                 <section class="menu-section">
                     <div class="menu-item centerRow" data-name="menu-item1">
                         <p>Фасад</p><span class="arrow">&#8250</span>
@@ -40,7 +40,7 @@
                         <p>Цвет окон</p><span class="arrow">&#8250</span>
                     </div>
                 </section>
-                <!-- меню контент -->
+                <!-- меню контент (содержимое) -->
                 <section class="image-section">
                     <div class="centerRow">
                         <!-- фасад -->
@@ -58,6 +58,7 @@
                                 <div class="button-material button-material-facade" data-value="2">Утолщенный</div>
                                 <div class="button-material button-material-facade" data-value="3">Колотый</div>
                             </div>
+                            <!--цвет одинарный -->
                             <div class="color color-facade active" name="facade-palette-1">
                                 <h4>Цвет</h4>
                                 <div class="background">
@@ -197,6 +198,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--цвет утолщенный -->
                             <div class="color color-facade" name="facade-palette-2">
                                 <h4>Цвет</h4>
                                 <div class="background">
@@ -336,6 +338,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--цвет колотый -->
                             <div class="color color-facade" name="facade-palette-3">
                                 <h4>Цвет</h4>
                                 <div class="background">
@@ -494,6 +497,7 @@
                                 </div>
                                 <div class="button-material button-material-plinth" data-value="3">Колотый</div>
                             </div>
+                            <!--цвет одинарный -->
                             <div class="color color-plinth active" name="plinth-palette-1">
                                 <h4>Цвет</h4>
                                 <div class="background">
@@ -569,6 +573,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--цвет колотый -->
                             <div class="color color-plinth" name="plinth-palette-3">
                                 <h4>Цвет</h4>
                                 <div class="background">
@@ -662,9 +667,10 @@
                                 </div>
                                 <div class="button-material button-material-framing" data-value="2">Утолщенный
                                 </div>
-                                <div class="button-material button-material-framing" data-value="3">Колотый</div>
+                                <!-- <div class="button-material button-material-framing" data-value="3">Колотый</div> -->
                             </div>
                             <div class="frames-style-hidden">
+                                <!--цвет одинарный -->
                                 <div class="color color-framing active" name="framing-palette-1">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -750,6 +756,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет утолщенный -->
                                 <div class="color color-framing" name="framing-palette-2">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -835,6 +842,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет колотый -->
                                 <div class="color color-framing" name="framing-palette-3">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -956,6 +964,7 @@
                                 <div class="button-material button-material-angles" data-value="3">Колотый</div>
                             </div>
                             <div class="angles-style-hidden">
+                                <!--цвет одинарный -->
                                 <div class="color color-angles active" name="angles-palette-1">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1041,6 +1050,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет утолщенный -->
                                 <div class="color color-angles" name="angles-palette-2">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1126,6 +1136,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет колотый -->
                                 <div class="color color-angles" name="angles-palette-3">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1231,6 +1242,7 @@
                                 <div class="button-material button-material-inserts" data-value="3">Колотый</div>
                             </div>
                             <div class="inserts-style-hidden">
+                                <!--цвет одинарный -->
                                 <div class="color color-inserts active" name="inserts-palette-1">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1370,6 +1382,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет утолщенный -->
                                 <div class="color color-inserts" name="inserts-palette-2">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1455,6 +1468,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--цвет колотый -->
                                 <div class="color color-inserts" name="inserts-palette-3">
                                     <h4>Цвет</h4>
                                     <div class="background">
@@ -1637,22 +1651,29 @@
                         <p id="fullscreenButton">На весь экран</p>
                     </div>
                     <!-- слои изображений по порядку меню -->
+                    <!-- оригинал -->
                     <img class="image-original" src="res/original.jpg" alt="originalImage">
+                    <!-- фасад - 1этаж - 2 этаж -->
                     <img class="img layer-facade" src="res/facade/66/1.png" alt="facade">
                     <img class="img layer-facade-1 disabled" src="" alt="">
                     <img class="img layer-facade-2 disabled" src="" alt="">
+                    <!-- цоколь -->
                     <img class="img layer-plinth" src="res/plinth/66/1.png" alt="plinth">
+                    <!-- обрамления - 1этаж - 2этаж -->
                     <img class="img layer-frames disabled" src="" alt="">
                     <img class="img layer-frames-1 disabled" src="" alt="">
                     <img class="img layer-frames-2 disabled" src="" alt="">
+                    <!-- углы - 1этаж - 2этаж -->
                     <img class="img layer-angles disabled" src="" alt="">
                     <img class="img layer-angles-1 disabled" src="" alt="">
                     <img class="img layer-angles-2 disabled" src="" alt="">
+                    <!-- вставки - 1 этаж - 2 этаж -->
                     <img class="img layer-inserts disabled" src="" alt="">
                     <img class="img layer-inserts-1 disabled" src="" alt="">
                     <img class="img layer-inserts-2 disabled" src="" alt="">
+                    <!-- окна -->
                     <img class="img layer-window" src="res/window/1.png" alt="angles">
-                    <!-- осветляющий фильтр  -->
+                    <!-- осветляющий фильтр на всё изображение  -->
                     <div class="filter"></div>
                 </section>
             </section>
