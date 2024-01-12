@@ -295,11 +295,13 @@ $(function () {
     $(".fullscreen-button").on("click", function () {
         let fullscreenButton = $("#fullscreenButton");
         if (fullscreen) {
-            area.appendTo(".container").removeClass("fullscreen");
+            let newArea = area.detach();
+            newArea.appendTo(".container").removeClass("fullscreen");
             fullscreenButton.text("На весь экран");
             fullscreen = false;
         } else {
-            area.appendTo("body").addClass("fullscreen");
+            let newArea = area.detach();
+            newArea.appendTo("body").addClass("fullscreen");
             fullscreenButton.text("Свернуть");
             fullscreen = true;
         }
