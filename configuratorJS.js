@@ -37,6 +37,12 @@ $(function () {
     let frameLevelValue = 0;
     let angleLevelValue = 0;
     let insertLevelValue = 0;
+    //cache
+    $(document).ready(function () {
+        $("head").append(
+            "<meta http-equiv='Cache-Control' content='max-age=0, must-revalidate'>"
+        );
+    });
     // actions
     $(document).click(function (event) {
         if (!$(event.target).closest("#configurator-area").length) {
